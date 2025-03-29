@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		77B33DFE2D97076D00332D99 /* UrbanSnacks App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UrbanSnacks App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		77C02D3A2D985E7E000A400C /* UrbanSnacks App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UrbanSnacks App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -33,16 +33,8 @@
 			isa = PBXGroup;
 			children = (
 				77B33E002D97076D00332D99 /* UrbanSnacks App */,
-				77B33DFF2D97076D00332D99 /* Products */,
+				77C02D3A2D985E7E000A400C /* UrbanSnacks App.app */,
 			);
-			sourceTree = "<group>";
-		};
-		77B33DFF2D97076D00332D99 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				77B33DFE2D97076D00332D99 /* UrbanSnacks App.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -67,7 +59,7 @@
 			packageProductDependencies = (
 			);
 			productName = "UrbanSnacks App";
-			productReference = 77B33DFE2D97076D00332D99 /* UrbanSnacks App.app */;
+			productReference = 77C02D3A2D985E7E000A400C /* UrbanSnacks App.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -95,7 +87,7 @@
 			mainGroup = 77B33DF52D97076D00332D99;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 77B33DFF2D97076D00332D99 /* Products */;
+			productRefGroup = 77B33DF52D97076D00332D99;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
