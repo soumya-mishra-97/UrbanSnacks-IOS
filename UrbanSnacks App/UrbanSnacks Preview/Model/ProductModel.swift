@@ -24,5 +24,4 @@ var products: [ProductModel] = [
     ProductModel(name: "SORAMAL\nPECRALE", category: "Juice", image: "SORAMAL_PECRALE", color: Color(#colorLiteral(red: 0.8901398778, green: 0.2978815734, blue: 0.5159702897, alpha: 1)), price: 30),
     ProductModel(name: "POPPA\nSørlands", category: "Snacks", image: "POPPASørlands", color: Color(#colorLiteral(red: 0.5983346105, green: 0.7615644932, blue: 0.65082407, alpha: 1)), price: 45),
     ProductModel(name: "YELLOW\nMAGGIK", category: "Snacks", image: "KraftNut", color: Color(#colorLiteral(red: 0.7157559991, green: 0.4882712364, blue: 0.322211355, alpha: 1)), price: 99),
-    ProductModel(name: "VELVET\nPLUM", category: "Juice", image: "VelvetPlum", color: Color(#colorLiteral(red: 0.4991779327, green: 0.3299075365, blue: 0.4959246516, alpha: 1)), price: 35),
 ]

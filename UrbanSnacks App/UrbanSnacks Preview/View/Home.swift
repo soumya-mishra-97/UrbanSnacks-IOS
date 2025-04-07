@@ -12,48 +12,57 @@ struct Home: View {
     @State var selectedCategory = ""
     
     var body: some View {
-        ScrollView {
-            VStack{
-                /// Header Section
+        NavigationView {
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack{
+                    /// Header Section
+                    HStack{
+                        Text("Order From The BEST OF **URBAN SNACKS**")
+                            .font(.system(size: 30))
+                            .padding(.trailing)
+                        
+                        Spacer()
+                        
+                        Image(systemName: "line.3.horizontal")
+                            .imageScale(.large)
+                            .frame(width: 70, height: 90)
+                            .overlay(RoundedRectangle(cornerRadius: 50).stroke().opacity(0.4))
+                    }
+                }.padding(20)
+                
+                /// Category List
+                CategoryView
+                
+                /// Snacks Collection View
                 HStack{
-                    Text("Order From The BEST OF **URBAN SNACKS**")
-                        .font(.system(size: 30))
+                    Text("Urban Snacks \n**COLLECTIONS**")
+                        .font(.system(size: 24))
                         .padding(.trailing)
                     
                     Spacer()
                     
-                    Image(systemName: "line.3.horizontal")
-                        .imageScale(.large)
-                        .frame(width: 70, height: 90)
-                        .overlay(RoundedRectangle(cornerRadius: 50).stroke().opacity(0.4))
+                    /// Navigate to the Store Collection
+                    NavigationLink {
+                        SnacksStore()
+                    } label: {
+                        Image(systemName: "arrow.right")
+                            .imageScale(.large)
+                            .frame(width: 40, height: 40)
+                            .overlay(RoundedRectangle(cornerRadius: 8).stroke().opacity(0.4))
+                    }.foregroundColor(.black)
+                    
+                    
                 }
-            }.padding(20)
-            
-            /// Category List
-            CategoryView
-            
-            /// Snacks Collection View
-            HStack{
-                Text("Urban Snacks \n**COLLECTIONS**")
-                    .font(.system(size: 24))
-                    .padding(.trailing)
+                .padding(.horizontal, 30)
+                .padding(.vertical, 15)
                 
-                Spacer()
-                
-                Image(systemName: "arrow.right")
-                    .imageScale(.large)
-                    .frame(width: 40, height: 40)
-                    .overlay(RoundedRectangle(cornerRadius: 8).stroke().opacity(0.4))
-            }
-            .padding(.horizontal, 30)
-            .padding(.vertical, 15)
-            
-            ScrollView(.horizontal, showsIndicators: false){
-                HStack{
-                    ForEach(products) { item in
-                        ProductCard(product: item)
-                    }
-                }.padding(.trailing, 20)
+                ScrollView(.horizontal, showsIndicators: false){
+                    HStack{
+                        ForEach(products) { item in
+                            ProductCard(product: item)
+                        }
+                    }.padding(.trailing, 20)
+                }
             }
         }
     }
@@ -91,10 +100,6 @@ struct Home: View {
     }
 }
 
-#Preview {
-    Home()
-}
-
 /// Product Card
 struct ProductCard: View {
     
@@ -111,7 +116,7 @@ struct ProductCard: View {
                 VStack (alignment: .leading , content:{
                     Text(product.name)
                         .font(.system(size: 32, weight: .semibold))
-                
+                    
                     Text(product.category)
                         .font(.callout)
                         .padding()
@@ -133,15 +138,15 @@ struct ProductCard: View {
         .padding(.leading, 20)
     }
     
-    /// Price View
+    /// Price Cart View
     var PriceView: some View {
         HStack{
             Text("$\(product.price).0")
                 .font(.system(size: 24, weight: .semibold))
             Spacer()
-            Button{
-                print("")
-            } label: {
+            NavigationLink(destination: {
+                Cart()
+            }, label: {
                 Image(systemName: "basket")
                     .imageScale(.large)
                     .padding()
@@ -149,7 +154,7 @@ struct ProductCard: View {
                     .background(.black)
                     .clipShape(Capsule())
                     .foregroundColor(.white)
-            }
+            })
             .padding(.horizontal, -12)
         }
         .padding(.leading)
@@ -159,4 +164,9 @@ struct ProductCard: View {
         .background(.white.opacity(0.8))
         .clipShape(Capsule())
     }
+}
+
+
+#Preview {
+    Home()
 }
